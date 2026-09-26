@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project Report Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">🔒 Project Report Portal</div>
+  <div id="userBar" class="hidden">
+    <span class="user" id="userLabel"></span>
+    &nbsp;·&nbsp;
+    <button class="link" id="logoutBtn">Log out</button>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- AUTH SCREEN -->
+  <section id="authScreen">
+    <h1>Sign in to continue</h1>
+    <p class="lead">BCA Final Year Semester Mini Project — submission workflow.</p>
+    <div class="card">
+      <div class="tabs">
+        <button id="tabLogin" class="active" type="button">Log in</button>
+        <button id="tabRegister" type="button">Register</button>
+      </div>
+
+      <form id="loginForm">
+        <div class="field"><label for="loginUser">Username</label><input id="loginUser" autocomplete="username" required></div>
+        <div class="field"><label for="loginPass">Password</label><input id="loginPass" type="password" autocomplete="current-password" required></div>
+        <div class="err" id="loginErr"></div>
+        <button class="primary" type="submit" style="width:100%;">Log in</button>
+      </form>
+
+      <form id="registerForm" class="hidden">
+        <div class="field"><label for="regName">Full name</label><input id="regName" required></div>
+        <div class="field"><label for="regUser">Choose a username</label><input id="regUser" required></div>
+        <div class="field"><label for="regPass">Choose a password</label><input id="regPass" type="password" required></div>
+        <div class="err" id="regErr"></div>
+        <button class="primary" type="submit" style="width:100%;">Create account</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- PROJECT FORM SCREEN -->
+  <section id="formScreen" class="hidden">
+    <h1>Project details</h1>
+    <p class="lead">Fill in your project information, then generate your submission report.</p>
+
+    <form id="projectForm">
+      <div class="card">
+        <div class="field"><label for="pTitle">Project title</label><input id="pTitle" required></div>
+        <div class="field"><label for="pAbstract">Abstract</label><textarea id="pAbstract" required></textarea></div>
+        <div class="field"><label for="pDesc">Project description</label><textarea id="pDesc" required></textarea></div>
+        <div class="field"><label for="pLit">Literature survey</label><textarea id="pLit" required></textarea></div>
+        <div class="row">
+          <div class="field"><label for="pModCount">Number of modules</label><input id="pModCount" type="number" min="1" max="15" required></div>
+          <div class="field"><label for="pOther">Other details (optional)</label><input id="pOther" placeholder="Tools, platform, guide name..."></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Modules</h2>
+        <p class="hint">Enter the number of modules above — the fields below update to match.</p>
+        <div id="moduleList"></div>
+      </div>
+
+      <div class="err" id="formErr"></div>
+      <div class="actions">
+        <button type="button" class="ghost" id="saveDraftBtn">Save draft</button>
+        <button type="submit" class="primary">Submit &amp; generate PDF</button>
+      </div>
+      <div class="status" id="formStatus"></div>
+    </form>
+  </section>
+
+</div>
+
+<footer>Developed by Y. Saran &middot; RS. Vishal &middot; K.B. Navin</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "project-report-portal-backend",
+  "version": "1.0.0",
+  "description": "Backend for BCA Final Year Mini Project - login/registration, project form, PDF report generation",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "pdfkit": "^0.15.0"
+  }
+}
